@@ -21,5 +21,3 @@
     enabled: yes
     daemon-reload: yes
 
-- name: Wait for port Prometheus Port
-  ansible.builtin.shell: sleep 5 ; netstat -lntp | grep 9090
