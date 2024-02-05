@@ -15,7 +15,7 @@ pipelines:
           jobs:
             apply:
               approval:
-                type: auto
+                type: manual
               timeout: 0
               tasks:
                 - exec:
