@@ -4,7 +4,7 @@
     dest: /opt
     remote_src: true
 
-- name: COpy Prometheus service file
+- name: Copy Prometheus service file
   ansible.builtin.template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
