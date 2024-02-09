@@ -61,16 +61,16 @@ resource "aws_iam_role" "main" {
     name = "parameter-store"
 
     policy = jsonencode({
-      "Version" : "2012-10-17",
-      "Statement" : [
+      "Version": "2012-10-17",
+      "Statement": [
         {
-          "Sid" : "VisualEditor0",
-          "Effect" : "Allow",
-          "Action" : [
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
             "ec2:DescribeInstances",
             "ec2:DescribeAvailabilityZones"
           ],
-          "Resource" : "*"
+          "Resource": "*"
         }
       ]
     })
