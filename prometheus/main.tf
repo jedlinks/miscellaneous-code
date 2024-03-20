@@ -81,3 +81,31 @@ resource "aws_iam_instance_profile" "main" {
   name = "prometheus-role"
   role = aws_iam_role.main.name
 }
+
+
+resource "aws_instance" "jenkins" {
+  ami                    = data.aws_ami.centos8.image_id
+  instance_type          = "t3.small"
+  vpc_security_group_ids = ["sg-0012107af37e36eec"]
+  iam_instance_profile   = aws_iam_instance_profile.main.name
+
+  tags = {
+    Name = "jenkins-server"
+  }
+}
+
+resource "aws_route53_record" "jenkins" {
+  zone_id = "Z05050322P8QFCN8M8LU9"
+  name    = "jenkins"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.jenkins.private_ip]
+}
+
+resource "aws_route53_record" "jenkins-public" {
+  zone_id = "Z05050322P8QFCN8M8LU9"
+  name    = "jenkins-public"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.jenkins.public_ip]
+}

@@ -1,5 +1,5 @@
-- name: Prometheus Server Setup
+- name: Prometheus and Jenkins Server Setup
   hosts: all
   become: yes
   roles:
-    - prometheus
+    - prometheus and jenkins
