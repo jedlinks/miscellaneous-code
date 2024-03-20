@@ -32,13 +32,13 @@ resource "aws_route53_record" "prometheus" {
   records = [aws_instance.prometheus.private_ip]
 }
 
-resource "aws_route53_record" "prometheus-public" {
-  zone_id = "Z05050322P8QFCN8M8LU9"
-  name    = "prometheus-public"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.prometheus.public_ip]
-}
+#resource "aws_route53_record" "prometheus-public" {
+#  zone_id = "Z05050322P8QFCN8M8LU9"
+#  name    = "prometheus-public"
+#  type    = "A"
+#  ttl     = 30
+#  records = [aws_instance.prometheus.public_ip]
+#}
 
 resource "aws_iam_role" "main" {
   name = "prometheus-role"
@@ -81,6 +81,7 @@ resource "aws_iam_instance_profile" "main" {
   name = "prometheus-role"
   role = aws_iam_role.main.name
 }
+
 
 
 resource "aws_instance" "jenkins" {
