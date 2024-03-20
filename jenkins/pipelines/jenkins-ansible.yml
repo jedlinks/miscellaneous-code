@@ -21,6 +21,6 @@ pipelines:
               timeout: 0
               tasks:
                 - exec:
-                    working_directory: prometheus
+                    working_directory: jenkins
                     command: bash
                     arguments: [ "ansible.sh", "jenkins" ]

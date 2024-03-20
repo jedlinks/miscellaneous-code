@@ -1,6 +1,0 @@
-- name: Prometheus and Jenkins Server Setup
-  hosts: all
-  become: yes
-  roles:
-    - prometheus
-    - jenkins

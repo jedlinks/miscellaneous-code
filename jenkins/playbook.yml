@@ -1,0 +1,5 @@
+- name: Jenkins Server Setup
+  hosts: all
+  become: yes
+  roles:
+    - jenkins
