@@ -18,8 +18,8 @@
 
 - name: Copy Prometheus Server configuration
   ansible.builtin.template:
-    src: prometheus.yml
-    dest: /opt/prometheus-{{ prometheus_version }}.linux-amd64/prometheus.yml
+    src: jenkins.repos
+    dest: /opt/prometheus-{{ prometheus_version }}.linux-amd64/jenkins.repos
 
 - name: Copy Prometheus Alerts configuration
   ansible.builtin.template:
