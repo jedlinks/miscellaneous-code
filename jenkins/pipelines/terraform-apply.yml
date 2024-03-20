@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  prometheus-terraform:
+  jenkins-terraform:
     group: tools
     label_template: "${COUNT}"
     materials:
@@ -21,9 +21,9 @@ pipelines:
                 - exec:
                     command: terraform
                     arguments: ["init"]
-                    working_directory: prometheus
+                    working_directory: jenkins
 
                 - exec:
                     command: terraform
                     arguments: ["apply", "-auto-approve"]
-                    working_directory: prometheus
+                    working_directory: jenkins
