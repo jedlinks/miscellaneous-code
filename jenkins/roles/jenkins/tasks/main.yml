@@ -23,7 +23,7 @@
     config: "{{ lookup('template', 'templates/pipeline.xml') }}"
     name: "{{item}}"
     password: admin123
-    url: http://jenkins-int.rdevopsb73.online:8080
+    url: http://jenkins-public.jedlinks.com:8080
     user: admin
   loop:
     - frontend
