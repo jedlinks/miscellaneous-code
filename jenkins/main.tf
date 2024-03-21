@@ -27,7 +27,7 @@ resource "aws_instance" "jenkins" {
 resource "aws_route53_record" "jenkins" {
   zone_id = "Z05050322P8QFCN8M8LU9"
   name    = "jenkins"
-  type    = "A"
+  type    = "CNAME"
   ttl     = 30
   records = [aws_instance.jenkins.private_ip]
 }
@@ -35,7 +35,7 @@ resource "aws_route53_record" "jenkins" {
 resource "aws_route53_record" "jenkins-public" {
   zone_id = "Z05050322P8QFCN8M8LU9"
   name    = "jenkins-public"
-  type    = "A"
+  type    = "CNAME"
   ttl     = 30
   records = [aws_instance.jenkins.public_ip]
 }
